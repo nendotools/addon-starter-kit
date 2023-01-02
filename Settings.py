@@ -3,7 +3,7 @@ from bpy.types import Context
 from bpy.props import BoolProperty, CollectionProperty, FloatVectorProperty, EnumProperty, FloatProperty, IntProperty, StringProperty
 
 
-class OverlaySettings( bpy.types.AddonPreferences ):
+class ProjectSettings( bpy.types.AddonPreferences ):
   ##
   # Name used to access settings
   ##
@@ -18,4 +18,7 @@ class OverlaySettings( bpy.types.AddonPreferences ):
   # Preferences UI for Addon Menu
   ##
   def draw( self, context: Context ):
-    pass
+    ## add button to call object.flip
+    layout = self.layout
+    layout.prop( self, "is_enabled" )
+    layout.operator( "object.flip" )

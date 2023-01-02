@@ -29,14 +29,14 @@ bl_info = {
 
 import bpy
 from . import lib
-from .Settings import OverlaySettings
+from .Settings import ProjectSettings 
 
 
 def register():
-    bpy.utils.register_class(OverlaySettings)
+    bpy.utils.register_class(ProjectSettings)
     lib.register()
 
 
 def unregister():
     lib.unregister()
-    bpy.utils.unregister_class(OverlaySettings)
+    bpy.utils.unregister_class(ProjectSettings)
