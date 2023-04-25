@@ -1,3 +1,6 @@
+# file-wide ignore at the top of the file
+# for type errors caused by using functions as types, a requirement for Blender
+# type: ignore
 import bpy
 from bpy.types import Context
 from bpy.props import BoolProperty, CollectionProperty, FloatVectorProperty, EnumProperty, FloatProperty, IntProperty, StringProperty
@@ -17,7 +20,7 @@ class ProjectSettings( bpy.types.AddonPreferences ):
   ##
   # Preferences UI for Addon Menu
   ##
-  def draw( self, context: Context ):
+  def draw( self, _: Context ):
     ## add button to call object.flip
     layout = self.layout
     layout.prop( self, "is_enabled" )

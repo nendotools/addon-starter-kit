@@ -1,8 +1,8 @@
 from bpy.utils import register_class, unregister_class
-from . import flip 
+from . import VIEW3D_OT_FlipOperator
 
 __cls__ = [
-    flip.FlipOperator
+    VIEW3D_OT_FlipOperator,
 ]
 
 def register():

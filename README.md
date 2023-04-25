@@ -48,3 +48,19 @@ also recommend using a more recent version of python (3.9+) for your editor.
 You may use this project as a base for older version of Blender, but all type
 declarations will need to be removed.
 
+### IDE language server support
+
+For language servers to properly understand the bpy module structure, you'll
+want to install [fake-bpy-module](https://github.com/nutti/fake-bpy-module). Follow the installation guide on the git repo.
+I'd stick with the latest version unless you're using specific features not
+available in older versions of Blender.
+
+### Linting and Formatting
+
+This template uses [flake8](https://github.com/PyCQA/flake8) to enforce common python standards along with some
+Blender-specific tweaks to help get you started. Global changes should be made
+using the `.flake8` file. Per-file and per-line exceptions can also be added.
+
+Linting and formatting are optional features, but ideal for open-source or
+multi-developer projects. This feature can be ignored if you do not want to
+use it.

@@ -8,7 +8,13 @@ class VIEW3D_OT_FlipOperator(Operator):
 
     def execute(self, context: Context):
         obj = context.object
+        # you may see an error when editing an array like this:
         obj.scale[0] *= -1
+        # fake_bpy_module defines it as a Tuple, which is immutable
+        # technically, it should be changed like this:
+        #   obj.scale = [obj.scale[0]*-1, obj.scale[1], obj.scale[2]]
+        # however, this is just an error with the package. The uncommented
+        # line above works just fine.
         return {'FINISHED'}
 
     @classmethod
